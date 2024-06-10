@@ -6,6 +6,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const SinglePlayer = () => {
   const [player, setPlayer] = useState({});
@@ -39,11 +40,11 @@ const SinglePlayer = () => {
         <h1>{error}</h1>
       ) : player ? (
         <>
-          <Card justify-center className="m-auto font-mono" sx={{ maxWidth: 450 }}>
+          <Card justify-center className="m-auto" sx={{ maxWidth: 450 }}>
             <CardMedia
               sx={{ height: 400 }}
               image={player.imageUrl}
-              title={player.name}
+              alt={player.name}
             />
             <CardContent>
               <Typography gutterBottom variant="h4" className="playerName" component="div">
@@ -55,6 +56,9 @@ const SinglePlayer = () => {
               <Typography variant="h6" className="playerInfo">
                 Breed: {player.breed}
               </Typography>
+              <Link to="/players">
+            <button className="text-blue-600 back-button">Back to Players</button>
+          </Link>
             </CardContent>
           </Card>
         </>
@@ -67,8 +71,4 @@ const SinglePlayer = () => {
 
 export default SinglePlayer;
 
-{
-  /* <div>{player.name}</div>
-<h6>{player.id}</h6>
-<h6>{player.breed}</h6> */
-}
+

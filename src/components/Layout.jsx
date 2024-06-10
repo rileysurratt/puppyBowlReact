@@ -2,6 +2,7 @@
 import Nav from "./NavBar";
 import { PropTypes } from "prop-types";
 
+
 const Layout = ({ children }) => {
   return (
     <div className="min-h-screen">

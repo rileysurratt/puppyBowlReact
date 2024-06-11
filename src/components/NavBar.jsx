@@ -14,7 +14,6 @@ import Toolbar from "@mui/material/Toolbar";
 import { Link } from "react-router-dom";
 // Search Bar
 import { styled, alpha } from '@mui/material/styles';
-import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 import { setSearchTerm} from "../slice/searchTermSlice";
 import InputBase from '@mui/material/InputBase';
@@ -25,8 +24,7 @@ const drawerWidth = 240;
 const navLinks = [
   { name: "Home", url: "/" },
   { name: "All Players", url: "/players" },
-  { name: "Create Player", url: "/" },
-  { name: "Teams", url: "/players/teams" },
+  { name: "Create Player", url: "/addplayer" },
 ];
 
 const Search = styled('div')(({ theme }) => ({
@@ -55,7 +53,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: 'success',
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
@@ -81,12 +79,12 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"  }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Puppy Bowl
       </Typography>
       <Divider />
-      <List>
+      <List underline>
         {navLinks.map((item) => (
           <Link to={item.url} key={item.name} sx={{ color: "white" }}>
             {item.name}
@@ -102,10 +100,10 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" className="mx-2 px-10">
+      <AppBar color="success" component="nav" className="mx-2 px-10">
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="success"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}

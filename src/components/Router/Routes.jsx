@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom"
 import AllPlayers from "../AllPlayers";
 import SinglePlayer from "../SinglePlayer";
 import HomePage from "../Home";
+import AddPlayer from "../NewPlayerForm";
 
 const Router = () => {
     return (
@@ -10,8 +11,7 @@ const Router = () => {
             <Route path='/' element={<HomePage />} />
             <Route path='/players' element={<AllPlayers />} />
             <Route path='/player/:id' element={<SinglePlayer />} />
-            <Route path='/addplayer' element={<h1>Create Player</h1>} />
-            <Route path='/players/teams' element={<h1>Teams</h1>} />
+            <Route path='/addplayer' element={<AddPlayer />} />
         </Routes>
     )
 }

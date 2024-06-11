@@ -7,6 +7,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 
 const SinglePlayer = () => {
   const [player, setPlayer] = useState({});
@@ -57,7 +59,7 @@ const SinglePlayer = () => {
                 Breed: {player.breed}
               </Typography>
               <Link to="/players">
-            <button className="text-blue-600 back-button">Back to Players</button>
+            <Button color="success" className="back-button">Back to Players</Button>
           </Link>
             </CardContent>
           </Card>

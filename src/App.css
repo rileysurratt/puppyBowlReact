@@ -56,8 +56,17 @@
   margin-top: 150px;
 }
 
-.text-blue-600 {
+.back-button {
   margin-top: 9px;
   margin-bottom: 5px;
   float: right;
+}
+
+.addPlayerForm {
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 470px;
+  height: 400px;
+  margin: auto;
 }

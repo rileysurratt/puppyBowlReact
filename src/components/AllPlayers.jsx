@@ -10,6 +10,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import DeletePlayer from "./DeletePlayer";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import Stack from "@mui/material/Stack";
 
 const AllPlayers = () => {
   const [players, setAllPlayers] = useState([]);
@@ -39,39 +42,58 @@ const AllPlayers = () => {
   }, []);
   return (
     <>
-    <Typography className="header">Puppy Bowl Participants</Typography>
+      <Typography className="header">Puppy Bowl Participants</Typography>
       {loading ? (
         <h1>Loading Players...</h1>
       ) : (
         <div className="grid-container">
           {filteredPlayers?.map((player) => {
             return (
-                <div
-                className="grid-item mt-16"
-                key={player.id}
-                >
-                  <Card sx={{ maxWidth: 345 }}>
-                    <CardMedia
+              <div className="grid-item mt-16" key={player.id}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardMedia
                     component="img"
                     alt={player.name}
                     height="140"
                     image={player.imageUrl}
-                    />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
                       {player.name}
-                         </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    </Typography>
+                    <Typography variant="body2" color="text.success">
                       PUPPY ID: {player.id}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.success">
                       BREED: {player.breed}
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" onClick={() => navigate(`/player/${player.id}`)}>DETAILS</Button>
-                    <Button size="small" onClick={() => {return DeletePlayer(player.id)}}>DELETE PLAYER</Button>
-                  </CardActions>
+                  <Stack
+                    justifyContent="center"
+                    alignItems="center"
+                    spacing={4}
+                  >
+                    <CardActions>
+                      <Button
+                        size="small"
+                        color="success"
+                        onClick={() => navigate(`/player/${player.id}`)}
+                        startIcon={<InfoOutlinedIcon />}
+                      >
+                        DETAILS
+                      </Button>
+                      <Button
+                        size="small"
+                        color="success"
+                        onClick={() => {
+                          return DeletePlayer(player.id);
+                        }}
+                        startIcon={<DeleteOutlineOutlinedIcon />}
+                      >
+                        DELETE PLAYER
+                      </Button>
+                    </CardActions>
+                  </Stack>
                 </Card>
               </div>
             );

@@ -1,5 +1,4 @@
-# React + Vite
-Puppy Bowl React 
+# Puppy Bowl React 
 
 # Concept: 
 As the web developer for a site like this, your job will be to handle the data about each of our puppy competitors and their owners. To that purpose, you will be interacting with the "Puppy Bowl" API we have built that hosts the data you will need about each puppy, each of its owners, and even the teams they are on. You will make certain requests to our API to get the appropriate data you will need, save that to the state of your React app, and then build various React components to represent that state to your users visually.
@@ -14,3 +13,4 @@ Your site's users should be able to:
 - Create a button to DELETE a player (ONLY DELETE PLAYERS YOU YOURSELF CREATE, PLEASE!)
 
 # Live Deployment: 
+Link to webpage: https://puppy-bowl-react-xi.vercel.app/
